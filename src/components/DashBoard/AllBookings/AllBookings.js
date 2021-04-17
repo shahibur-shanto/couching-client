@@ -9,7 +9,7 @@ const AllBookings = () => {
   let history = useHistory();
   
   useEffect(() => {
-    fetch(`http://localhost:5000/allBookingsList`)
+    fetch(`https://fierce-retreat-33154.herokuapp.com/allBookingsList`)
       .then((res) => res.json())
       .then((data) => {
         setAllBookings(data);
@@ -22,7 +22,7 @@ const AllBookings = () => {
     // setStatus(newStatus);
     const product = {id,status}
     console.log(product);
-    fetch(`http://localhost:5000/update/${id}`,{
+    fetch(`https://fierce-retreat-33154.herokuapp.com/update/${id}`,{
       method:'PATCH',
       headers:{'Content-type':'application/json'},
       body: JSON.stringify(product)

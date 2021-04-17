@@ -13,7 +13,7 @@ const Enroll = () => {
   const { title } = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/bookings/${title}`)
+    fetch(`https://fierce-retreat-33154.herokuapp.com/bookings/${title}`)
       .then((res) => res.json())
       .then((data) => {
         setCourse(data[0]);
@@ -31,7 +31,7 @@ const Enroll = () => {
       status: "Done",
       image:course.image.img,
     };
-    const url = `http://localhost:5000/booking`;
+    const url = `https://fierce-retreat-33154.herokuapp.com/booking`;
     console.log(eventData);
     fetch(url, {
       method: "POST",

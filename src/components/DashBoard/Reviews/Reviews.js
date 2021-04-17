@@ -14,7 +14,7 @@ const Reviews = () => {
             review: review,
             
           };
-          const url = `http://localhost:5000/reviews`;
+          const url = `https://fierce-retreat-33154.herokuapp.com/reviews`;
     // console.log(eventData);
     fetch(url, {
       method: "POST",

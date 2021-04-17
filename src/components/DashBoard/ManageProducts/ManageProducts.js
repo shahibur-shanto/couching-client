@@ -4,7 +4,7 @@ const ManageProducts = () => {
     const [services,setServices] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/services`)
+        fetch(`https://fierce-retreat-33154.herokuapp.com/services`)
           .then((res) => res.json())
           .then((data) => {
             setServices(data);
@@ -12,7 +12,7 @@ const ManageProducts = () => {
       }, [services]);
 
       const handleDelete = (title)=>{
-        fetch(`http://localhost:5000/service/${title}`,{
+        fetch(`https://fierce-retreat-33154.herokuapp.com/service/${title}`,{
         method:'DELETE'})
         .then(res=>res.json())
         .then((result)=>{

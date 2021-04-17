@@ -7,7 +7,7 @@ const BookingList = () => {
     // const [course,setCourse] = useState([])
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/bookingList?email=`+loggedInUser.email)
+        fetch(`https://fierce-retreat-33154.herokuapp.com/bookingList?email=`+loggedInUser.email)
         .then(res=>res.json())
         .then(data=>{
             setBookings(data)

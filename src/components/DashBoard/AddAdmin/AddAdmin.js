@@ -3,7 +3,7 @@ import React from 'react';
 const AddAdmin = () => {
     const handleAdmin =()=>{
         const admin = document.getElementById('admin').value;
-        const url = `http://localhost:5000/addAdmin`;
+        const url = `https://fierce-retreat-33154.herokuapp.com/addAdmin`;
 
         fetch(url, {
             method: "POST",
