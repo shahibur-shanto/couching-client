@@ -18,7 +18,7 @@ const NavBar = () => {
             <Link className="blue-color pr-5" href="#link">Services</Link>
             <Link className="blue-color pr-5" to="/dashboard">Dash Board</Link>
             <Link className="blue-color pr-5" href="#link">Contact Us</Link>
-            <Link className="blue-color pr-5" href="/admin">Admin</Link>
+            <Link className="blue-color pr-5" to="/admin">Admin</Link>
             <Link className="blue-color" to="/login"><div className="btn btn-primary">Login</div></Link>
           </Nav>
         </Navbar.Collapse>
