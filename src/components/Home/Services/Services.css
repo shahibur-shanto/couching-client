@@ -1,0 +1,16 @@
+.service-img{
+    height:50px;
+ }
+.service-section{
+    background-color: #eef1ef;
+}
+.services{
+    background-color: white;
+    border-radius: 5px;
+    color:black;
+    }
+.service{
+    margin:15px;
+    color:black;
+    
+}

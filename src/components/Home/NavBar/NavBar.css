@@ -1,0 +1,14 @@
+.logo-img{
+    height:3.5em;
+    border-radius: 50%;
+}
+.blue-color{
+    color:blue !important;
+    font-weight: bolder;
+}
+
+#basic-nav-dropdown{
+    color: blue;
+    font-weight: bold;
+    
+}
