@@ -31,7 +31,7 @@ const AllBookings = () => {
     .then(data=>{
       console.log(data);
     })
-    window.location.reload();
+    history.push('/allBookingList')
     
   }
   
