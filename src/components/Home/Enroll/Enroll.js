@@ -71,8 +71,10 @@ const Enroll = () => {
   }
 
 return (
-    <div className="row">
-      <div style={{display: enrollData ? 'none': 'block'}} className="col-md-6">
+    <div className="row d-flex justify-content-center text-center">
+    <div style={{display: enrollData ? 'none': 'block'}} className="mt-5 ml-5 col-md-4 w-100">
+    <h1>Please Book Now</h1>
+    <div className="">
         <form className="ship-form" onSubmit={handleSubmit(onSubmit)}>
         <input
             className="form-control text-center"
@@ -101,12 +103,16 @@ return (
             value={course.price}
           />
           <br />
-          <input type="submit" />
+          <input type="submit" className="btn btn-primary" />
         </form>
       </div>
+      
+    </div>
+      <div className="mt-5 col-md-6 w-100">
       <div style={{display: enrollData ? 'block': 'none'}} className="col-md-6">
-        <h2>Please Pay for me</h2>
+        <h2 className="mb-5">Please Pay</h2>
         <Payment handlePayment={handlePaymentSuccess}></Payment>
+      </div>
       </div>
     </div>
   );

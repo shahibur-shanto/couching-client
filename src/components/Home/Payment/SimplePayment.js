@@ -46,7 +46,7 @@ const [paymentError, setPaymentError] = useState(null);
     <div>
       <form onSubmit={handleSubmit}>
       <CardElement />
-      <button className="btn btn-primary" type="submit" disabled={!stripe}>
+      <button className="btn btn-primary mt-5" type="submit" disabled={!stripe}>
         Pay Now
       </button>
       {
