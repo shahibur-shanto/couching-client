@@ -34,11 +34,7 @@ const DashItems = () => {
                         <FontAwesomeIcon icon={faGripHorizontal} /> <span>Book</span> 
                     </Link>
                 </li>
-                <li>
-                    <Link to="/allBookingList" className="text-white">
-                        <FontAwesomeIcon icon={faCalendar} /> <span>Booking List</span> 
-                    </Link>
-                </li>
+                
                 <li>
                     <Link to="/review" className="text-white">
                         <FontAwesomeIcon icon={faUsers} /> <span>Review</span>
@@ -46,6 +42,11 @@ const DashItems = () => {
                 </li>
                 </div>}
                 {isAdmin && <div>
+                    <li>
+                    <Link to="/allBookingList" className="text-white">
+                        <FontAwesomeIcon icon={faCalendar} /> <span>Booking List</span> 
+                    </Link>
+                </li>
                 <li>
                     <Link to="/addServices" className="text-white">
                         <FontAwesomeIcon icon={faFileAlt} /> <span>Add Service</span>

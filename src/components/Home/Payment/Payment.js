@@ -8,11 +8,11 @@ import SimplePayment from './SimplePayment';
 // recreating the `Stripe` object on every render.
 const stripePromise = loadStripe('pk_test_51Igp7nH2IZWzvV3lDXsBSx5ztoGfpKNdJn96ZGcisvvrzYuy4AVYYJOLNjOpNzFaaTZ3BaEq3JErLROUa9T5jocr00nfcawL8C');
 
-const Payment = () => {
+const Payment = ({handlePayment}) => {
     return (
         <div>
             <Elements stripe={stripePromise}>
-            <SimplePayment></SimplePayment>
+            <SimplePayment handlePayment={handlePayment}></SimplePayment>
     </Elements>
         </div>
     );

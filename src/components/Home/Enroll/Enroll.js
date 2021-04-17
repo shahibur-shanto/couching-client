@@ -1,17 +1,20 @@
 import React, { useContext, useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
 import { useHistory, useParams } from "react-router";
 import { UserContext } from "../../../App";
 import Payment from "../Payment/Payment";
 
 
-
 const Enroll = () => {
   const history = useHistory();
+  const {  handleSubmit } = useForm();
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   const [course, setCourse] = useState([]);
   const date = new Date();
   const { title } = useParams();
+  const [enrollData, setEnrollData] = useState(null);
 
+  
   useEffect(() => {
     fetch(`https://fierce-retreat-33154.herokuapp.com/bookings/${title}`)
       .then((res) => res.json())
@@ -20,9 +23,26 @@ const Enroll = () => {
       });
   }, [title]);
   //   console.log(course.title,course.price);
-  const handleConfirm = () => {
-    
+ 
+
+  const onSubmit = () => {
     const eventData = {
+          name: loggedInUser.name,
+          price: course.price,
+          course: course.title,
+          email: loggedInUser.email,
+          date: date,
+          status: "Pending",
+          image:course.image.img,
+        };
+    setEnrollData(eventData);
+    
+  };
+  
+  
+  const handlePaymentSuccess = paymentId => {
+    
+    const orderDetails = { 
       name: loggedInUser.name,
       price: course.price,
       course: course.title,
@@ -30,28 +50,32 @@ const Enroll = () => {
       date: date,
       status: "Pending",
       image:course.image.img,
+      paymentId:paymentId,
     };
-    const url = `https://fierce-retreat-33154.herokuapp.com/booking`;
-    console.log(eventData);
-    fetch(url, {
-      method: "POST",
+    console.log(orderDetails)
+    fetch('http://localhost:5000/booking', {
+      method: 'POST',
       headers: {
-        "content-type": "application/json",
+        'Content-Type': 'application/json'
       },
-      body: JSON.stringify(eventData),
-    }).then((res) => console.log("server side response", res));
-    window.alert("your order placed successfully");
-    history.push("/")
-  };
+      body: JSON.stringify(orderDetails)
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        alert('your order placed successfully');
+        history.push('/')
+      })
+  
+  
+  }
 
-  return (
-    <div className="text-center">
-      <h1>Book</h1>
-      <div className="d-flex justify-content-center">
-        <div className="w-25 w-sm-50">
-          <span>Name</span>
-          <input
-            className="form-control  text-center"
+return (
+    <div className="row">
+      <div style={{display: enrollData ? 'none': 'block'}} className="col-md-6">
+        <form className="ship-form" onSubmit={handleSubmit(onSubmit)}>
+        <input
+            className="form-control text-center"
             type="text" disabled
             value={loggedInUser.name}
           />
@@ -77,14 +101,12 @@ const Enroll = () => {
             value={course.price}
           />
           <br />
-          <div className="">
-            <Payment></Payment>
-          </div>
-          <br />
-          <button onClick={handleConfirm} className="btn btn-success">
-            Confirm Enroll
-          </button>
-        </div>
+          <input type="submit" />
+        </form>
+      </div>
+      <div style={{display: enrollData ? 'block': 'none'}} className="col-md-6">
+        <h2>Please Pay for me</h2>
+        <Payment handlePayment={handlePaymentSuccess}></Payment>
       </div>
     </div>
   );

@@ -8,8 +8,8 @@ const Header = () => {
                 <div className="col-md-4 offset-md-2">
                     <small>Math mentoring</small>
                     <h1>Mathematics <br/>Professor</h1>
-                    <button className="btn btn-primary">About Me</button>
-                    <button className="btn btn-primary">Contact Me</button>
+                    <button className="btn btn-primary m-3">About Me</button>
+                    <button className="btn btn-primary m-3">Contact Me</button>
                 </div>
                 <div className="col-md-4">
 

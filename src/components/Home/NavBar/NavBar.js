@@ -18,17 +18,7 @@ const NavBar = () => {
             <Link className="blue-color pr-5" href="#link">Services</Link>
             <Link className="blue-color pr-5" to="/dashboard">Dash Board</Link>
             <Link className="blue-color pr-5" href="#link">Contact Us</Link>
-            <NavDropdown className="blue-color pr-5" title={"Pages +"} id="basic-nav-dropdown">
-              <DropdownItem className="blue-color" href="#action/3.1">Services</DropdownItem>
-              <DropdownItem className="blue-color" href="#action/3.2">
-                Online Courses
-              </DropdownItem>
-              <DropdownItem className="blue-color pr-5" href="#action/3.3">Testimonials</DropdownItem>
-              
-              <DropdownItem className="blue-color pr-5" href="#action/3.4">
-                Blog
-              </DropdownItem>
-            </NavDropdown>
+            <Link className="blue-color pr-5" href="/admin">Admin</Link>
             <Link className="blue-color" to="/login"><div className="btn btn-primary">Login</div></Link>
           </Nav>
         </Navbar.Collapse>

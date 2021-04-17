@@ -31,6 +31,7 @@ const AllBookings = () => {
     .then(data=>{
       console.log(data);
     })
+    alert('Your Status Updated....to see the updated status please check your booking')
     history.push('/allBookingList')
     
   }
@@ -50,7 +51,7 @@ const AllBookings = () => {
                 <th scope="col">Name</th>
                 <th scope="col">Email ID</th>
                 <th scope="col">Course</th>
-                <th scope="col">Pay With</th>
+                <th scope="col">Payment ID</th>
                 <th scope="col">Status</th>
               </tr>
             </thead>
@@ -61,7 +62,7 @@ const AllBookings = () => {
                     <td>{book.name}</td>
                     <td>{book.email}</td>
                     <td>{book.course}</td>
-                    <td>{"credit card"}</td>
+                    <td>{book.paymentId}</td>
                     <td>
                    <select onChange={handleStatusChange} name="status" id={book._id} value={book.status}>
                         <option value="Pending">Pending</option>
