@@ -25,6 +25,9 @@ function App() {
     <Router>
       <Switch>
         
+      <Route exact path="/">
+          <Home></Home>
+        </Route>
         <PrivateRoute path="/addServices">
           <DashBoard></DashBoard>
           <AddService></AddService>
