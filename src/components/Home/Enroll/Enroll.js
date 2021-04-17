@@ -28,7 +28,7 @@ const Enroll = () => {
       course: course.title,
       email: loggedInUser.email,
       date: date,
-      status: "Done",
+      status: "Pending",
       image:course.image.img,
     };
     const url = `https://fierce-retreat-33154.herokuapp.com/booking`;
@@ -52,28 +52,28 @@ const Enroll = () => {
           <span>Name</span>
           <input
             className="form-control  text-center"
-            type="text"
+            type="text" disabled
             value={loggedInUser.name}
           />
           <br />
           <span>Email</span>
           <input
             className="form-control  text-center"
-            type="text"
+            type="text" disabled
             value={loggedInUser.email}
           />
           <br />
           <span>Course Enroll</span>
           <input
             className="form-control  text-center"
-            type="text"
+            type="text" disabled
             value={course.title}
           />
           <br />
           <span>Price $</span>
           <input
             className="form-control  text-center"
-            type="text"
+            type="text" disabled
             value={course.price}
           />
           <br />
