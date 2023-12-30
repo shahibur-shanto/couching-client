@@ -7,33 +7,33 @@ import Service from "../Service/Service";
 import "./Services.css";
 
 const Services = () => {
-  const [services, setServices] = useState([]);
+	const [services, setServices] = useState([]);
 
-  useEffect(() => {
-    fetch(`https://fierce-retreat-33154.herokuapp.com/services`)
-      .then((res) => res.json())
-      .then((data) => {
-        // console.log(data);
-        setServices(data);
-      });
-  }, [0]);
+	useEffect(() => {
+		fetch(`https://genious-coaching-server.vercel.app/services`)
+			.then((res) => res.json())
+			.then((data) => {
+				// console.log(data);
+				setServices(data);
+			});
+	}, [0]);
 
-  return (
-    <section className="service-section">
-      <div className="text-center">
-        <small>My Services</small>
-        <h1>What I Do?</h1>
-        <hr></hr>
-      </div>
-      <div className="d-flex justify-content-center">
-        <div className="row w-75 d-flex justify-content-center">
-          {services.map((service) => (
-            <Service service={service}></Service>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+	return (
+		<section className="service-section">
+			<div className="text-center">
+				<small>My Services</small>
+				<h1>What I Do?</h1>
+				<hr></hr>
+			</div>
+			<div className="d-flex justify-content-center">
+				<div className="row w-75 d-flex justify-content-center">
+					{services.map((service) => (
+						<Service service={service}></Service>
+					))}
+				</div>
+			</div>
+		</section>
+	);
 };
 
 export default Services;
