@@ -7,7 +7,6 @@ import Login from "./components/Login/Login";
 import { createContext, useState } from "react";
 import Enroll from "./components/Home/Enroll/Enroll";
 import DashBoard from "./components/DashBoard/DashBoard/DashBoard";
-import AboutMe from "./components/Home/AboutMe/AboutMe";
 import BookingList from "./components/DashBoard/BookingList/BookingList";
 import AllBookings from "./components/DashBoard/AllBookings/AllBookings";
 import Reviews from "./components/DashBoard/Reviews/Reviews";

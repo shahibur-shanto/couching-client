@@ -10,7 +10,7 @@ const DashItems = () => {
     const [isAdmin,setIsAdmin] = useState(false);
 
     useEffect(()=>{
-        fetch('https://fierce-retreat-33154.herokuapp.com/isAdmin',{
+        fetch('https://genius-coaching-server.vercel.app/isAdmin',{
             method: "POST",
       headers: {
         "content-type": "application/json",
